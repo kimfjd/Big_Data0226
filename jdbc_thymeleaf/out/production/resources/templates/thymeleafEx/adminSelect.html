@@ -1,0 +1,30 @@
+<!-- HTML 템플릿 -->
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="container">
+<h2>사원 정보</h2>
+<button onclick="redirectToadmininfo()">돌아가기</button><br>
+<script> function redirectToadmininfo() {
+        window.location.href = "http://localhost:63342/jdbc/work_java/jdbc_thymeleaf/src/main/resources/templates/thymeleafEx/admininfo.html?_ijt=4tf7odladqt2pva52a9oqksg7h&_ij_reload=RELOAD_ON_SAVE";
+    }</script>
+<table>
+    <thead>
+    <tr>
+        <th>관리자 아이디</th>
+        <th>관리자 비밀번호</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ADMIN_INFO : ${adminloyees}">
+        <td th:text="${ADMIN_INFO.ADM_ID}"></td>
+        <td th:text="${ADMIN_INFO.ADM_PW}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

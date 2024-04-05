@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form action="/ADMIN_INFO/login" th:object="${login}" method="post">
+        <label for="ADM_ID">ID:</label>
+        <input type="text" id="ADM_ID" th:field="*{ADM_ID}" required>
+
+        <label for="ADM_PW">Password:</label>
+        <input type="password" id="ADM_PW" th:field="*{ADM_PW}" required>
+
+        <input type="submit" value="Login">
+    </form>
+    <div class="error" th:if="${param.error}">
+        <p>로그인에 실패하였습니다. 아이디와 비밀번호를 다시 확인해주세요.</p>
+    </div>
+</div>
+</body>
+</html>

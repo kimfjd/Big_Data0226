@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>회원 정보</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="container">
+<h2>회원 정보</h2>
+<button onclick="redirectToadminpage()">돌아가기</button><br>
+<script> function redirectToadminpage() {
+        window.location.href = "http://localhost:63342/jdbc/work_java/jdbc_thymeleaf/src/main/resources/templates/thymeleafEx/adminpage.html?_ijt=b87d939h8s02d4i1o5hc449hko&_ij_reload=RELOAD_ON_SAVE";
+    }</script>
+<table>
+  <thead>
+  <tr>
+    <th>USER_MAIL</th>
+    <th>PASSWORD</th>
+    <th>NAME</th>
+    <th>FIRST_ID_CARDNUM</th>
+    <th>PHONE_NUMBER</th>
+    <th>ADDRESS</th>
+    <th>GENDER</th>
+    <th>NICKNAME</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="info : ${infoloyees}">
+    <td th:text="${info.user_mail}"></td>
+    <td th:text="${info.password}"></td>
+    <td th:text="${info.name}"></td>
+    <td th:text="${info.first_id_cardnum}"></td>
+    <td th:text="${info.phone_number}"></td>
+    <td th:text="${info.address}"></td>
+    <td th:text="${info.gender}"></td>
+    <td th:text="${info.nickname}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

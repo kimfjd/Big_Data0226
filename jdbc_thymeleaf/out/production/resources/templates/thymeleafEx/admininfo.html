@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <title>관리자 관리 페이지</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>원하는 페이지로 이동하세요.</h2>
+
+<button onclick="redirectToPage('/ADMIN_INFO/select')">[1] 관리자 조회</button><br>
+<button onclick="redirectToPage('/ADMIN_INFO/insert')">[2] 관리자 추가</button><br>
+<button onclick="redirectToPage('/ADMIN_INFO/delete')">[3] 관리자 삭제</button><br>
+<button onclick="redirectToadminpage()">[4] 관리자 페이지</button><br>
+<button onclick="redirectToadminmain()">[5] 돌아가기</button><br>
+
+
+
+<script>
+    function redirectToPage(url) {
+        window.location.href = "http://localhost:8111" + url;
+    }
+    function redirectToadminpage() {
+        window.location.href = "http://localhost:63342/jdbc/work_java/jdbc_thymeleaf/src/main/resources/templates/thymeleafEx/adminmain.html?_ijt=r36v5nhe9idsk28occ8bn30ugt&_ij_reload=RELOAD_ON_SAVE";
+    }
+    function redirectToadminmain() {
+        window.location.href = "http://localhost:63342/jdbc/work_java/jdbc_thymeleaf/src/main/resources/templates/thymeleafEx/adminmain.html?_ijt=b1jr2r1n157b14qcnuhg59lvca&_ij_reload=RELOAD_ON_SAVE";
+    }
+
+</script>
+</body>
+</html>

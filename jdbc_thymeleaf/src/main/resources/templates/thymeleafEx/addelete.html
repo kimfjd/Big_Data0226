@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>관리자 삭제 페이지</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>관리자 아이디 삭제</h2>
+<form th:action="@{/ADMIN_INFO/delete}" th:object="${addeletes}" method="post">
+    <label for="ADM_ID">삭제할 아이디:</label>
+    <input type="text" id="ADM_ID" name="ADM_ID" required><br><br>
+
+    <input type="submit" value="삭제">
+    <button onclick="redirectToadmininfo()">돌아가기</button><br>
+    <script> function redirectToadmininfo() {
+        window.location.href = "http://localhost:63342/jdbc/work_java/jdbc_thymeleaf/src/main/resources/templates/thymeleafEx/admininfo.html?_ijt=4tf7odladqt2pva52a9oqksg7h&_ij_reload=RELOAD_ON_SAVE";
+    }</script>
+</form>
+</body>
+</html>

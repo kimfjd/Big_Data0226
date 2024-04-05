@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <title>관리자 관리 페이지</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>원하는 페이지로 이동하세요.</h2>
+
+<button onclick="redirectToPage('/ADMIN_INFO/select')">[0] 마이 페이지</button><br>
+<button onclick="redirectToPage('/ADMIN_INFO/select')">[1] 방 올룸</button><br>
+<button onclick="redirectToPage('/ADMIN_INFO/insert')">[2] 방 골룸</button><br>
+<button onclick="redirectToadminpage()">[4] 관리자 페이지</button><br>
+<button onclick="closeWindow()">[5] 나가기</button><br>
+
+
+<script>
+    function redirectToPage(url) {
+        window.location.href = "http://localhost:8111" + url;
+    }
+    function redirectToadminpage() {
+        window.location.href = "http://localhost:63342/jdbc/work_java/jdbc_thymeleaf/src/main/resources/templates/thymeleafEx/adminpage.html?_ijt=8fe2hue9cnm4491cgfrq97eqva&_ij_reload=RELOAD_ON_SAVE";
+    }
+
+</script>
+</body>
+</html>
